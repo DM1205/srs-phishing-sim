@@ -38,8 +38,15 @@ def _load_targets(path: str) -> list[dict]:
 
 def _save_campaign(entries: list[dict]) -> None:
     os.makedirs(os.path.dirname(CAMPAIGN_PATH), exist_ok=True)
+    existing: list = []
+    if os.path.isfile(CAMPAIGN_PATH):
+        try:
+            with open(CAMPAIGN_PATH, "r", encoding="utf-8") as fh:
+                existing = json.load(fh)
+        except (json.JSONDecodeError, ValueError):
+            existing = []
     with open(CAMPAIGN_PATH, "w", encoding="utf-8") as fh:
-        json.dump(entries, fh, indent=2, ensure_ascii=False)
+        json.dump(existing + entries, fh, indent=2, ensure_ascii=False)
 
 
 def _build_email(name: str, tracking_url: str) -> tuple[str, str]:

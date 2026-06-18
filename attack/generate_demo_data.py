@@ -71,7 +71,7 @@ clicks = [
 # Pedro: latência de 1 segundo → possível automação / teste do próprio atacante
 captures = [
     {
-        "timestamp": t(0, 45, 12),   # Ana: clique às 08:42, captura às 08:45:12 → 192s
+        "timestamp": t(0, 43, 8),    # Ana: clique às 08:42, captura às 08:43:08 → 68s
         "email": "ana.silva@empresax.pt",
         "ip": "188.37.12.45",
         "user_agent": UA_CHROME,
@@ -81,7 +81,7 @@ captures = [
         "geo": GEO_LIS_NOS,
     },
     {
-        "timestamp": t(1, 18, 44),   # João: clique às 09:15, captura às 09:18:44 → 224s
+        "timestamp": t(1, 17, 23),   # João: clique às 09:15, captura às 09:17:23 → 143s
         "email": "joao.ferreira@empresax.pt",
         "ip": "213.13.54.211",
         "user_agent": UA_EDGE,
@@ -91,7 +91,7 @@ captures = [
         "geo": GEO_PRT_MEO,
     },
     {
-        "timestamp": t(1, 2, 31),    # Maria: clique às 08:58, captura às 09:02:31 → 271s
+        "timestamp": t(0, 59, 37),   # Maria: clique às 08:58, captura às 08:59:37 → 97s
         "email": "maria.santos@empresax.pt",
         "ip": "188.37.12.45",
         "user_agent": UA_CHROME,
@@ -153,4 +153,3 @@ print(f"  Clicaram           : {len(clicks)} ({len(clicks)/len(campaign)*100:.0f
 print(f"  Submeteram creds   : {len(captures)} ({len(captures)/len(campaign)*100:.0f}%)")
 print(f"  Dispositivo partilhado: Ana + Maria (fp-rececao-001)")
 print(f"  Latencia suspeita  : Pedro Costa -> 1 segundo (possivel bot)")
-print(f"\nCorre agora: python forensics.py")
